@@ -1,7 +1,7 @@
-public class HomeWork {
-     static void main(String[] args) {
+public class HomeWork1 {
+    static void main(String[] args) {
 
-         // Данные сотрудника
+        // Данные сотрудника
         String name = "Глеб";
         String position = "Старший шаурма-инженер";
 
