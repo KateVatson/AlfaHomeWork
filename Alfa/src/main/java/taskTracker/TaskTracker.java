@@ -53,8 +53,8 @@ public class TaskTracker {
             }
         }
 
-        int total = tasks.size();
-        int openCount = total - doneCount;
+        int total = tasks.size(); // кол-во элементов/задач в списке
+        int openCount = total - doneCount; // кол-во открытых задач
 
         System.out.println("Всего задач: " + total);
         System.out.println("Выполнено: " + doneCount);
