@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GameRentalTest {
 
-    private final BoardGame demogame =
+    private final BoardGame TEST_GAME =
             new BoardGame("Манчкин", 12, 400);
 
     // Проверяем успешную аренду игры
     @Test
     void testRentBoardGameHappyPath() {
         GameRental gameRental = new GameRental();
-        gameRental.addGame(demogame);
+        gameRental.addGame(TEST_GAME);
 
         assertTrue(gameRental.rentGame("Манчкин", 18),
                 "Метод аренды вернул неожиданный ответ"
@@ -28,7 +28,7 @@ public class GameRentalTest {
     @Test
     void testRentBoardGameNotFound() {
         GameRental gameRental = new GameRental();
-        gameRental.addGame(demogame);
+        gameRental.addGame(TEST_GAME);
 
         assertThrows(
                 IllegalArgumentException.class, () -> gameRental.rentGame("Монополия", 18),
@@ -40,7 +40,7 @@ public class GameRentalTest {
     @Test
     void testRentBoardGameInvalidClientAge() {
         GameRental gameRental = new GameRental();
-        gameRental.addGame(demogame);
+        gameRental.addGame(TEST_GAME);
 
         assertFalse(gameRental.rentGame("Манчкин", 10),
                 "Метод аренды вернул неожиданный ответ"
