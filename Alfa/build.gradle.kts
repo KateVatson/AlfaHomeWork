@@ -18,8 +18,14 @@ dependencies {
     testImplementation("io.cucumber:cucumber-junit-platform-engine:7.34.7")
     testImplementation("org.junit.platform:junit-platform-suite:1.13.4")
 
+    testImplementation("io.rest-assured:rest-assured:5.5.6")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind:2.20.0")
+
     implementation("net.datafaker:datafaker:2.5.4")
     implementation("com.github.lalyos:jfiglet:0.0.8")
+
+    compileOnly("org.projectlombok:lombok:1.18.42")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
 }
 
 tasks.test {
