@@ -1,5 +1,9 @@
 plugins {
     id("java")
+    id("io.qameta.allure") version "4.3.0"
+}
+allure {
+    version.set("2.42.1")
 }
 
 group = "org.example"
@@ -14,6 +18,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("com.codeborne:selenide:7.10.1")
+    testImplementation("io.qameta.allure:allure-jupiter:2.35.5")
 
     testImplementation("io.cucumber:cucumber-java:7.34.7")
     testImplementation("io.cucumber:cucumber-junit-platform-engine:7.34.7")
