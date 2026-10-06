@@ -232,4 +232,28 @@ public class ServeRestTest {
                 .extract()
                 .path("_id");
     }
+
+    // Дополнительное задание 8. Негативный логин: неверный пароль
+    @Test
+    @Order(9)
+    public void shouldFailLoginWithWrongPassword() {
+        String invalidLoginRequestBody = """
+                {
+                  "email": "%s",
+                  "password": "wrongPassword999"
+                }
+                """.formatted(userEmail);
+
+        given()
+                .contentType(ContentType.JSON)
+                .body(invalidLoginRequestBody)
+                .when()
+                .post("/login")
+                .then()
+                .statusCode(401)
+                .body(
+                        "message",
+                        equalTo("Email e/ou senha inválidos")
+                );
+    }
 }
