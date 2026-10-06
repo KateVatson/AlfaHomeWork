@@ -2,7 +2,6 @@ package hw17;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import net.datafaker.Faker;
 import org.junit.jupiter.api.*;
 
@@ -135,23 +134,18 @@ public class ServeRestTest {
                 }
                 """.formatted(userEmail);
 
-        Response loginResponse = given()
+        userToken = given()
                 .contentType(ContentType.JSON)
                 .body(loginRequestBody)
                 .when()
-                .post("/login");
-
-        loginResponse
+                .post("/login")
                 .then()
                 .statusCode(200)
                 .body(
                         "message",
                         equalTo("Login realizado com sucesso")
                 )
-                .body("authorization", notNullValue());
-
-        userToken = loginResponse
-                .then()
+                .body("authorization", notNullValue())
                 .extract()
                 .path("authorization");
     }
