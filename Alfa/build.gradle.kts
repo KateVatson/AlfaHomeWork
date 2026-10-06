@@ -13,6 +13,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:6.0.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("com.codeborne:selenide:7.10.1")
 
     testImplementation("io.cucumber:cucumber-java:7.34.7")
     testImplementation("io.cucumber:cucumber-junit-platform-engine:7.34.7")
